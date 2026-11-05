@@ -1,0 +1,66 @@
+Attempting to perform the InitializeDefaultDrives operation on the 'FileSystem' provider failed.
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/adept/pioneer3/protos/Pioneer3dx.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/adept/pioneer3/protos/Pioneer3Gripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/balls/protos/Ball.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/Anomalyforlife/WebotsUtils/master/protos/BallTee.proto"
+
+WorldInfo {
+  info [
+    "Pioneer 3DX with its gripper (Adept Mobile Robots)"
+    "This two-wheel, two-motor differential drive robot has in addition a rear caster wheel"
+    "It is programmed to perform a simple obstacle avoidance behavior based on the values sensed by its 16 sonars"
+  ]
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material1 "tee_ball"
+      material2 "concave_tee"
+      maxContactJoints 32
+    }
+  ]
+}
+Viewpoint {
+  fieldOfView 0.660595
+  orientation -0.1518423833163365 -0.19379580761370085 0.9692198283053066 4.923519947333201
+  position -0.3267083061211752 2.3740872483977755 1.0212817170396962
+  follow "Pioneer 3-DX"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 1 0 0
+  floorSize 4 4
+  floorTileSize 1 1
+  wallHeight 0.4
+}
+DEF PIONEER_3DX Pioneer3dx {
+  translation 0.48905 -0.1983 0.0975
+  rotation 0 0 -1 -2.768175307179586
+  controller "pioneer_comportamenti_totale_reverse"
+  extensionSlot [
+    DEF GRIPPER_BASE Pioneer3Gripper {
+      translation 0.135 0 0.026
+    }
+  ]
+}
+Ball {
+  translation -0.0356082 0.625305 0.0802069
+  color 0 1 1
+  contactMaterial "tee_ball"
+}
+BallTee {
+  translation -0.0376035 0.618808 0
+  name "Red Tee"
+  color 0.917647 0.486275 0.478431
+}
+BallTee {
+  name "Blue Tee"
+  color 0.698039 0.760784 0.945098
+}
