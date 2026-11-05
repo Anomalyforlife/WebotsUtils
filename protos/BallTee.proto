@@ -1,0 +1,211 @@
+Attempting to perform the InitializeDefaultDrives operation on the 'FileSystem' provider failed.
+#VRML_SIM R2025a utf8
+# Reusable concave tee that can hold a ball. Dimensions are in meters.
+PROTO BallTee [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "Ball Tee"
+  field SFColor plateColor 0.8 0.8 0.8
+  field SFColor color 0.917647 0.486275 0.478431
+  field SFFloat stemHeight 0.041
+  field SFFloat stemRadius 0.01
+  field SFFloat headRadius 0.035
+  field SFFloat headHeight 0.04
+  field SFBool headBottom FALSE
+  field SFString contactMaterial "concave_tee"
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    contactMaterial IS contactMaterial
+    children [
+      DEF CONCAVE_PLATE Pose {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor IS plateColor
+            roughness 1
+            metalness 0
+          }
+          geometry IndexedFaceSet {
+            creaseAngle 0.5
+            coord Coordinate {
+              point [
+                0 0 0.04475
+                0.011666667 0 0.045083333
+                0.010778595 0.00446464 0.045083333
+                0.008249579 0.008249579 0.045083333
+                0.00446464 0.010778595 0.045083333
+                0 0.011666667 0.045083333
+                -0.00446464 0.010778595 0.045083333
+                -0.008249579 0.008249579 0.045083333
+                -0.010778595 0.00446464 0.045083333
+                -0.011666667 0 0.045083333
+                -0.010778595 -0.00446464 0.045083333
+                -0.008249579 -0.008249579 0.045083333
+                -0.00446464 -0.010778595 0.045083333
+                0 -0.011666667 0.045083333
+                0.00446464 -0.010778595 0.045083333
+                0.008249579 -0.008249579 0.045083333
+                0.010778595 -0.00446464 0.045083333
+                0.023333333 0 0.046083333
+                0.021557189 0.00892928 0.046083333
+                0.016499158 0.016499158 0.046083333
+                0.00892928 0.021557189 0.046083333
+                0 0.023333333 0.046083333
+                -0.00892928 0.021557189 0.046083333
+                -0.016499158 0.016499158 0.046083333
+                -0.021557189 0.00892928 0.046083333
+                -0.023333333 0 0.046083333
+                -0.021557189 -0.00892928 0.046083333
+                -0.016499158 -0.016499158 0.046083333
+                -0.00892928 -0.021557189 0.046083333
+                0 -0.023333333 0.046083333
+                0.00892928 -0.021557189 0.046083333
+                0.016499158 -0.016499158 0.046083333
+                0.021557189 -0.00892928 0.046083333
+                0.035 0 0.04775
+                0.032335784 0.01339392 0.04775
+                0.024748737 0.024748737 0.04775
+                0.01339392 0.032335784 0.04775
+                0 0.035 0.04775
+                -0.01339392 0.032335784 0.04775
+                -0.024748737 0.024748737 0.04775
+                -0.032335784 0.01339392 0.04775
+                -0.035 0 0.04775
+                -0.032335784 -0.01339392 0.04775
+                -0.024748737 -0.024748737 0.04775
+                -0.01339392 -0.032335784 0.04775
+                0 -0.035 0.04775
+                0.01339392 -0.032335784 0.04775
+                0.024748737 -0.024748737 0.04775
+                0.032335784 -0.01339392 0.04775
+              ]
+            }
+            coordIndex [
+              0 1 2 -1
+              0 2 3 -1
+              0 3 4 -1
+              0 4 5 -1
+              0 5 6 -1
+              0 6 7 -1
+              0 7 8 -1
+              0 8 9 -1
+              0 9 10 -1
+              0 10 11 -1
+              0 11 12 -1
+              0 12 13 -1
+              0 13 14 -1
+              0 14 15 -1
+              0 15 16 -1
+              0 16 1 -1
+              1 17 18 -1
+              1 18 2 -1
+              2 18 19 -1
+              2 19 3 -1
+              3 19 20 -1
+              3 20 4 -1
+              4 20 21 -1
+              4 21 5 -1
+              5 21 22 -1
+              5 22 6 -1
+              6 22 23 -1
+              6 23 7 -1
+              7 23 24 -1
+              7 24 8 -1
+              8 24 25 -1
+              8 25 9 -1
+              9 25 26 -1
+              9 26 10 -1
+              10 26 27 -1
+              10 27 11 -1
+              11 27 28 -1
+              11 28 12 -1
+              12 28 29 -1
+              12 29 13 -1
+              13 29 30 -1
+              13 30 14 -1
+              14 30 31 -1
+              14 31 15 -1
+              15 31 32 -1
+              15 32 16 -1
+              16 32 17 -1
+              16 17 1 -1
+              17 33 34 -1
+              17 34 18 -1
+              18 34 35 -1
+              18 35 19 -1
+              19 35 36 -1
+              19 36 20 -1
+              20 36 37 -1
+              20 37 21 -1
+              21 37 38 -1
+              21 38 22 -1
+              22 38 39 -1
+              22 39 23 -1
+              23 39 40 -1
+              23 40 24 -1
+              24 40 41 -1
+              24 41 25 -1
+              25 41 42 -1
+              25 42 26 -1
+              26 42 43 -1
+              26 43 27 -1
+              27 43 44 -1
+              27 44 28 -1
+              28 44 45 -1
+              28 45 29 -1
+              29 45 46 -1
+              29 46 30 -1
+              30 46 47 -1
+              30 47 31 -1
+              31 47 48 -1
+              31 48 32 -1
+              32 48 33 -1
+              32 33 17 -1
+            ]
+          }
+        }
+      ]
+    }
+      Pose {
+        translation 0 0 0.02
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor IS color
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height IS stemHeight
+              radius IS stemRadius
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 0.02775
+        rotation 1 0 0 3.14159
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor IS color
+              roughness 1
+              metalness 0
+            }
+            geometry Cone {
+              bottomRadius IS headRadius
+              height IS headHeight
+              bottom IS headBottom
+              subdivision 16
+            }
+          }
+        ]
+      }
+    ]
+    boundingObject USE CONCAVE_PLATE
+  }
+}
