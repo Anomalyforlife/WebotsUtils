@@ -16,7 +16,7 @@ Reusable Webots PROTO based on the red and blue tee objects from the Pioneer 3DX
 - `headBottom`: enables or disables the cone's bottom face
 - `contactMaterial`: Webots contact material name
 
-The concave plate keeps its original dimensions and uses an 8-section mesh (25 vertices), reducing collision points below Webots’ 32-joint contact limit.
+The concave plate keeps its original dimensions and uses an 8-section collision mesh with 25 vertices and 40 triangles to reduce generated contact points. The example world caps contact joints at 32.
 
 ## Import from GitHub
 
