@@ -21,7 +21,8 @@ The tee exposes color and dimension fields. Its concave plate uses a compact col
 
     DEF DOOR Door {
       translation 1.7 0.25 0.2
-      rotation 0 0 1 -1.5707953071795862\n      size 0.5 0.1 0.4
+      rotation 0 0 1 -1.5707953071795862
+      size 0.5 0.1 0.4
     }
 
 ### Control it from Python
