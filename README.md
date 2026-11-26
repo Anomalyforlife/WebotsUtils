@@ -20,9 +20,8 @@ The tee exposes color and dimension fields. Its concave plate uses a compact col
     IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/Anomalyforlife/WebotsUtils/master/protos/Door.proto"
 
     DEF DOOR Door {
-      translation 1.7 0.25 0.2
-      rotation 0 0 1 -1.5707953071795862
-      size 0.5 0.1 0.4
+      translation 1.6 0.24 0.2
+      rotation 0 0 1 -1.5707953071795862\n      size 0.5 0.1 0.4
     }
 
 ### Control it from Python
@@ -42,4 +41,4 @@ Set the robot's supervisor field to TRUE. Keep door_controller.py beside your ro
     # Call every simulation step to animate movement.
     door.update()
 
-The example controller also maps O to open and C to close. In the SquareDoor layout, the closed panel fills the 0.5 m opening; when open, its inner end is flush with the wall face at x = 1.70 m.
+The example controller also maps O to open and C to close. In the SquareDoor layout, the closed panel fills the 0.5 m opening; when open, its inner end is flush with the wall face at x = 1.60 m.
