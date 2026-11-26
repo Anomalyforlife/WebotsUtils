@@ -11,7 +11,7 @@ The tee exposes color and dimension fields. Its concave plate uses a compact col
 
 ## Door
 
-- [protos/Door.proto](protos/Door.proto): reusable 0.5 m door panel with configurable pose, size, and color (10 cm default thickness).
+- [protos/Door.proto](protos/Door.proto): reusable 0.5 m door panel with configurable pose and size, with green default color and 10 cm thickness.
 - [controllers/pioneer3dx_door_controller/door_controller.py](controllers/pioneer3dx_door_controller/door_controller.py): reusable Supervisor helper.
 - [controllers/pioneer3dx_door_controller/pioneer3dx_door_controller.py](controllers/pioneer3dx_door_controller/pioneer3dx_door_controller.py): Pioneer example with keyboard controls.
 
@@ -21,7 +21,8 @@ The tee exposes color and dimension fields. Its concave plate uses a compact col
 
     DEF DOOR Door {
       translation 1.55 0.24 0.2
-      rotation 0 0 1 -1.5707953071795862\n      size 0.5 0.1 0.4
+      rotation 0 0 1 -1.5707953071795862
+      size 0.5 0.1 0.4
     }
 
 ### Control it from Python
@@ -41,4 +42,4 @@ Set the robot's supervisor field to TRUE. Keep door_controller.py beside your ro
     # Call every simulation step to animate movement.
     door.update()
 
-The example controller also maps O to open and C to close. In the SquareDoor layout, the closed panel fills the 0.5 m opening; when open, its hinge is on the wall face at x = 1.60 m.
+The example controller also maps O to open and C to close. In the SquareDoor layout, the closed panel fills the 0.5 m opening; when open, its hinge is on the wall face at x = 1.50 m.
