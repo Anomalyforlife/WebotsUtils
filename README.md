@@ -42,4 +42,4 @@ Set the robot's supervisor field to TRUE. Keep door_controller.py beside your ro
     # Call every simulation step to animate movement.
     door.update()
 
-The example controller also maps O to open and C to close. In the SquareDoor layout, the closed panel fills the 0.5 m opening; when open, its hinge is on the wall face at x = 1.50 m.
+The example controller also maps O to open and C to close. In the SquareDoor layout, the closed panel fills the 0.5 m opening; when open, its hinge is on the inner wall face at x = 1.50 m.

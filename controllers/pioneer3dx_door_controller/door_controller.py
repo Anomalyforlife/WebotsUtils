@@ -27,7 +27,7 @@ class DoorController:
             raise ValueError("DoorController expects a vertical Z-axis hinge")
 
         # Local vector from hinge to panel center. Default hinge: negative-X,
-        # negative-Y corner of the panel (the outer wall face in SquareDoor).
+        # negative-Y corner of the panel (the inner wall face in SquareDoor).
         self.hinge_offset = hinge_offset or (self.half_length, self.half_thickness)
         self.closed_angle = self.closed_rotation[3]
         self.open_angle = self.closed_angle + opening_angle
