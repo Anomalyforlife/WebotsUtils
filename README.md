@@ -1,29 +1,44 @@
-# Ball Tee for Webots
+# Webots utility PROTOs and controllers
 
-Reusable Webots PROTO based on the red and blue tee objects from the Pioneer 3DX world.
+Reusable objects and controller helpers for Webots.
 
-## Files
+## Ball Tee
 
-- [protos/BallTee.proto](protos/BallTee.proto): reusable object.
-- [worlds/pioneer3dx_gripper_reverse.wbt](worlds/pioneer3dx_gripper_reverse.wbt): example world with both tees.
+- [protos/BallTee.proto](protos/BallTee.proto): reusable ball tee.
+- [worlds/pioneer3dx_gripper_reverse.wbt](worlds/pioneer3dx_gripper_reverse.wbt): example world.
 
-## Customizable fields
+The tee exposes color and dimension fields. Its concave plate uses a compact collision mesh; the example world configures the matching contact material.
 
-- `translation`, `rotation`, and `name`
-- `plateColor`: concave plate color
-- `color`: stem and conical top color
-- `stemHeight`, `stemRadius`, `headRadius`, and `headHeight`: dimensions in meters
-- `headBottom`: enables or disables the cone's bottom face
-- `contactMaterial`: Webots contact material name
+## Door
 
-The concave plate keeps its original dimensions and uses an 8-section collision mesh with 25 vertices and 40 triangles to reduce generated contact points. The example world caps contact joints at 32.
+- [protos/Door.proto](protos/Door.proto): reusable door panel with configurable pose, size, and color.
+- [controllers/pioneer3dx_door_controller/door_controller.py](controllers/pioneer3dx_door_controller/door_controller.py): reusable Supervisor helper.
+- [controllers/pioneer3dx_door_controller/pioneer3dx_door_controller.py](controllers/pioneer3dx_door_controller/pioneer3dx_door_controller.py): Pioneer example with keyboard controls.
 
-## Import from GitHub
+### Import the door
 
-Add this declaration near the top of a world file:
+    IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/Anomalyforlife/WebotsUtils/master/protos/Door.proto"
 
-```webots
-IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/Anomalyforlife/WebotsUtils/master/protos/BallTee.proto"
-```
+    DEF DOOR Door {
+      translation 1.55 -0.26 0.2
+      rotation 0 0 1 -1.5707953071795862
+    }
 
-Webots makes `BallTee` available through its node import/add menu. You can also add a `BallTee {}` node directly. The example world shows red and blue instances.
+### Control it from Python
+
+Set the robot's supervisor field to TRUE. Keep door_controller.py beside your robot controller, then use:
+
+    from controller import Supervisor
+    from door_controller import DoorController
+
+    robot = Supervisor()
+    door = DoorController(robot, "DOOR")
+
+    # Call these when the robot decides to change the door state.
+    door.open_door()
+    door.close_door()
+
+    # Call every simulation step to animate movement.
+    door.update()
+
+The example controller also maps O to open and C to close.

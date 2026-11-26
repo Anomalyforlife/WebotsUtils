@@ -1,0 +1,29 @@
+#VRML_SIM R2025a utf8
+# Reusable hinged door panel. Geometry is independent of the controller logic.
+# Use DoorController from controllers/pioneer3dx_door_controller/door_controller.py
+# to animate a DEF DOOR instance with a Supervisor controller.
+
+PROTO Door [
+  field SFVec3f translation 1.55 -0.26 0.2
+  field SFRotation rotation 0 0 1 -1.5707953071795862
+  field SFVec3f size 0.5 0.1 0.4
+  field SFColor color 0.55 0.55 0.55
+  field SFString name "Door"
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor IS color
+          roughness 1
+        }
+        geometry Box { size IS size }
+      }
+    ]
+    boundingObject Box { size IS size }
+  }
+}
