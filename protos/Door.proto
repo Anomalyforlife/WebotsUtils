@@ -4,9 +4,9 @@
 # to animate a DEF DOOR instance with a Supervisor controller.
 
 PROTO Door [
-  field SFVec3f translation 1.55 -0.26 0.2
+  field SFVec3f translation 1.6 0.25 0.2
   field SFRotation rotation 0 0 1 -1.5707953071795862
-  field SFVec3f size 0.5 0.1 0.4
+  field SFVec3f size 0.5 0.04 0.4
   field SFColor color 0.55 0.55 0.55
   field SFString name "Door"
 ]
